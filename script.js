@@ -23,6 +23,13 @@ function deleteLast() {
 
 function calculate() {
   try {
+    // 👇 Secret Function
+    if (result.innerText === "13042023") {
+      result.innerText = "I ❤️ U.";
+      return;
+    }
+
+    // Normal calculation
     result.innerText = eval(result.innerText);
   } catch {
     result.innerText = "Error";
