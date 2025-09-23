@@ -25,7 +25,7 @@ function calculate() {
   try {
     // 👇 Secret Function
     if (result.innerText === "13042023") {
-      result.innerText = "I ❤️ U.";
+      result.innerText = "I ❤️ U";
       return;
     }
 
