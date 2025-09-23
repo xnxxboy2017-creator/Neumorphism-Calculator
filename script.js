@@ -1,4 +1,5 @@
 let result = document.getElementById("result");
+let themeBtn = document.getElementById("toggleTheme");
 
 function appendValue(value) {
   if (result.innerText === "0" && value !== ".") {
@@ -22,8 +23,19 @@ function deleteLast() {
 
 function calculate() {
   try {
-    result.innerText = eval(result.innerText.replace("×", "*").replace("÷", "/"));
+    result.innerText = eval(result.innerText);
   } catch {
     result.innerText = "Error";
   }
 }
+
+// Theme toggle
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    themeBtn.textContent = "☀️ Light";
+  } else {
+    themeBtn.textContent = "🌙 Dark";
+  }
+});

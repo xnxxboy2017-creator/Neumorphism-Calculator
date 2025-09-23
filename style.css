@@ -1,19 +1,62 @@
+/* Light Mode (default) */
+:root {
+  --bg-color: #e6e6fa;
+  --calc-bg: #7a42f4;
+  --text-color: #fff;
+  --shadow-dark: #5e32c4;
+  --shadow-light: #965cff;
+}
+
+/* Dark Mode */
+body.dark {
+  --bg-color: #1e1e2e;
+  --calc-bg: #2e2e3e;
+  --text-color: #e0e0e0;
+  --shadow-dark: #191926;
+  --shadow-light: #3c3c4a;
+}
+
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #e6e6fa;
+  background: var(--bg-color);
   font-family: Arial, sans-serif;
+  transition: background 0.3s;
+}
+
+.theme-toggle {
+  margin-bottom: 15px;
+}
+
+.theme-toggle button {
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--calc-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  box-shadow: 4px 4px 8px var(--shadow-dark),
+              -4px -4px 8px var(--shadow-light);
+  transition: all 0.3s;
+}
+
+.theme-toggle button:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+              inset -4px -4px 8px var(--shadow-light);
 }
 
 .calculator {
   width: 260px;
   padding: 20px;
   border-radius: 25px;
-  background: #7a42f4;
-  box-shadow: 8px 8px 16px #5e32c4,
-              -8px -8px 16px #965cff;
+  background: var(--calc-bg);
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+              -8px -8px 16px var(--shadow-light);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .display {
@@ -24,12 +67,13 @@ body {
   align-items: center;
   padding: 10px 15px;
   border-radius: 15px;
-  background: #7a42f4;
-  color: #fff;
+  background: var(--calc-bg);
+  color: var(--text-color);
   font-size: 2rem;
   font-weight: bold;
-  box-shadow: inset 5px 5px 10px #5e32c4,
-              inset -5px -5px 10px #965cff;
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+              inset -5px -5px 10px var(--shadow-light);
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .buttons {
@@ -43,18 +87,18 @@ body {
   border: none;
   outline: none;
   border-radius: 50%;
-  background: #7a42f4;
-  color: white;
+  background: var(--calc-bg);
+  color: var(--text-color);
   font-size: 1.1rem;
   cursor: pointer;
-  box-shadow: 6px 6px 10px #5e32c4,
-              -6px -6px 10px #965cff;
+  box-shadow: 6px 6px 10px var(--shadow-dark),
+              -6px -6px 10px var(--shadow-light);
   transition: all 0.2s;
 }
 
 .btn:active {
-  box-shadow: inset 6px 6px 10px #5e32c4,
-              inset -6px -6px 10px #965cff;
+  box-shadow: inset 6px 6px 10px var(--shadow-dark),
+              inset -6px -6px 10px var(--shadow-light);
 }
 
 .equal {
