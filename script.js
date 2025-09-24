@@ -73,7 +73,7 @@ function calculate() {
     expr = expr.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
 
     // 3) Secret Easter egg
-    if (expr === "07042023") {
+    if (expr === "742023") {
       result.innerText = "I ❤️ U";
       return;
     }
